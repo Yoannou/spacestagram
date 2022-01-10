@@ -1,38 +1,23 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body {
+  background-color: black;
   color: white;
+  line-height: 1.5;
+  /*
+  background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.5)), url(/src/img/ss-earth-1.jpg);
+  background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.5)), url(/src/img/ss-mars-1.jpg);
+  background-attachment: fixed;
+  background-position: right;
+  background-size: cover;
+  */
 }
 
-.App-link {
-  color: #61dafb;
+h1, h2, h3, h4 {
+  margin-bottom: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+p {
+  font-size: 22px;
+  font-family: arbotek, sans-serif;
+  font-weight: 300;
+  font-style: normal;
 }

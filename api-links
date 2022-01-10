@@ -1,0 +1,24 @@
+https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos/manifests/Curiosity&api_key=Q4TKMfEiMEj4MV0YxDAFddfCZEUvi0ofPqf6G9QG
+
+https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=Q4TKMfEiMEj4MV0YxDAFddfCZEUvi0ofPqf6G9QG
+
+917064
+917065
+-->
+917086
+917063
+
+https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?page=2&api_key=Q4TKMfEiMEj4MV0YxDAFddfCZEUvi0ofPqf6G9QG
+
+CURRENT
+https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1&api_key=Q4TKMfEiMEj4MV0YxDAFddfCZEUvi0ofPqf6G9QG
+
+CURRENT WITH MAX
+https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=3350&api_key=Q4TKMfEiMEj4MV0YxDAFddfCZEUvi0ofPqf6G9QG
+
+MANIFEST
+https://api.nasa.gov/mars-photos/api/v1/manifests/curiosity?api_key=Q4TKMfEiMEj4MV0YxDAFddfCZEUvi0ofPqf6G9QG
+
+
+EARTH
+https://api.nasa.gov/EPIC/api/natural/date/2019-05-30?api_key=Q4TKMfEiMEj4MV0YxDAFddfCZEUvi0ofPqf6G9QG

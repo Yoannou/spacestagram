@@ -1,0 +1,30 @@
+.container-earth {
+  text-align: center;
+}
+
+@media only screen and (min-width: 1025px) {
+
+  .view-earth {
+    /*transition: all 1s ease;
+    transform: translateX(100%);*/
+    width: 99vw;
+    position: absolute;
+    right: 100%;
+    background-image: linear-gradient(to right, rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.8)), url(/src/img/ss-earth-1.jpg);
+    background-attachment: fixed;
+    background-position: right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .container-earth {
+    position: relative;
+    max-width: 614px;
+    padding: 10px;
+    left: 50%;
+  }
+
+  .container-earth {
+    transform: translateX(-25%);
+  }
+}
