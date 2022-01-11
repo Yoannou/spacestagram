@@ -5,11 +5,11 @@ import './App.css';
 
 function App() {
   return (
-    <>
+    <div className="main-wrapper">
       <Home />
-      <ViewMars active="false"/>
-      <ViewEarth active="false"/>
-    </>
+      <ViewMars active="false" />
+      <ViewEarth active="false" />
+    </div>
   );
 }
 

@@ -5,27 +5,38 @@
 @media only screen and (min-width:1025px) {
 
   .view-mars {
-    transition: all 1s ease;
-    transform: translateX(-100%);
-    width: 99vw;
+    transition: all 0.8s ease-out;
+    width: 100vw;
     position: absolute;
-    left: 100%;
-    background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.5), rgba(10, 10, 10, 0.5)), url(/src/img/ss-mars-1.jpg);
-    background-attachment: fixed;
-    background-position: 0px 0px;
-    background-size: cover;
-    background-repeat: no-repeat;
+  }
+
+  .mars-bg {
+    position: fixed;
+    right: 0px;
+    max-width: 70vw;
+    height: auto;
+    z-index: -5;
+  }
+
+  .mars-img {
+    transition: all 1s ease;
+    /*position: fixed;
+    max-width: 70vw; */
+    width: 100%;
+    right: 0px;
+    z-index: -1;
   }
   
   .container-mars {
     position: relative;
+    z-index: 5;
     max-width: 614px;
     padding: 10px;
-    left: 50%;
-    /*background-color: rgba(60, 60, 70, 0.5)*/
+    left: 20%;
   }
 
-  .container-mars {
-    transform: translateX(-75%);
+  .inactive-mars {
+    transform: translateX(100%);
   }
+  
 }

@@ -5,26 +5,36 @@
 @media only screen and (min-width: 1025px) {
 
   .view-earth {
-    /*transition: all 1s ease;
-    transform: translateX(100%);*/
-    width: 99vw;
+    transition: all 0.8s ease-out;
+    width: 100vw;
     position: absolute;
-    right: 100%;
-    background-image: linear-gradient(to right, rgba(10, 10, 10, 0.4), rgba(10, 10, 10, 0.8)), url(/src/img/ss-earth-1.jpg);
-    background-attachment: fixed;
-    background-position: right;
-    background-size: cover;
-    background-repeat: no-repeat;
+  }
+
+  .earth-bg {
+    position: fixed;
+    left: 0px;
+    max-width: 70vw;
+    height: auto;
+    z-index: -5;
+  }
+
+  .earth-img {
+    transition: all 1s ease;
+    /*position: fixed;
+    max-width: 70vw; */
+    width: 100%;
+    left: 0px;
+    z-index: -1;
   }
   
   .container-earth {
     position: relative;
+    z-index: 5;
     max-width: 614px;
     padding: 10px;
-    left: 50%;
+    left: 45%;
   }
-
-  .container-earth {
-    transform: translateX(-25%);
+  .inactive-earth {
+    transform: translateX(-100%);
   }
 }

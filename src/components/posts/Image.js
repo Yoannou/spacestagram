@@ -6,8 +6,6 @@ import './Image.css'
 
 function Image({image}) {
 
-  console.log(image)
-
   return (
     <img className="post-image" src={image} />
   )
