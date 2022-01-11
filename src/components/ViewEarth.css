@@ -8,6 +8,8 @@
     transition: all 0.8s ease-out;
     width: 100vw;
     position: absolute;
+    z-index: 5;
+    background-color: black;
   }
 
   .earth-bg {
@@ -26,15 +28,17 @@
     left: 0px;
     z-index: -1;
   }
+
+  .container-outer-mars {
+    position: relative;
+    width: 100%;
+  }
   
-  .container-earth {
+  .container-inner-earth {
     position: relative;
     z-index: 5;
     max-width: 614px;
     padding: 10px;
     left: 45%;
-  }
-  .inactive-earth {
-    transform: translateX(-100%);
   }
 }

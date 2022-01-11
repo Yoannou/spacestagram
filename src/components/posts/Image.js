@@ -4,10 +4,10 @@ import './Image.css'
 // WONT LOAD IMAGE
 // Could be because image is async and is not here yet
 
-function Image({image}) {
+function Image({planet, image}) {
 
   return (
-    <img className="post-image" src={image} />
+    <img className={"post-image "+planet+"-image"} src={image} />
   )
 }
 

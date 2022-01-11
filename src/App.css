@@ -23,6 +23,10 @@ p {
   font-style: normal;
 }
 
+::-webkit-scrollbar {
+  z-index: 50;
+}
+
 /* CLASSES */
 .main-wrapper {
   overflow-x: hidden;
@@ -42,4 +46,18 @@ p {
 
 /*
 Include commonalities between the Mars and Earth views here
+*/
+
+.offscreen-right {
+  transform: translateX(100%);
+}
+
+.offscreen-left {
+  transform: translateX(-100%);
+}
+/*
+.container-outer {
+  position: relative;
+  width: 100%;
+}
 */

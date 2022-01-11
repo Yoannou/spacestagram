@@ -4,17 +4,19 @@ import PostsEarth from './posts/PostsEarth.js'
 import './ViewEarth.css'
 import earthBG from '../img/ss-earth-6.jpg'
 
-function ViewEarth({active}){
+function ViewEarth({offscreen}){
   return (
-    <div className="view-earth inactive-earth">
+    <div className="view-earth offscreen-left">
       <div className="earth-bg">
         <div className="bg-filter"></div>
         <img className="earth-img" src={earthBG}></img>
       </div>
-      <div className="container-earth">
-        <Title main="earth" sub="Gaze upon our beautiful blue planet from afar! These photos
-        were taken by NASA's EPIC module."/>
-        <PostsEarth />
+      <div className="container-outer-earth">
+        <div className="container-inner-earth">
+          <Title main="earth" sub="Gaze upon our beautiful blue planet from afar! These photos
+          were taken by NASA's EPIC module."/>
+          <PostsEarth />
+        </div>
       </div>
     </div>
   )

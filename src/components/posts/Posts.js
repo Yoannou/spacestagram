@@ -57,7 +57,7 @@ function Posts() {
   return (
     <div className="posts-container">
       {marsData.map((data, i) => ( 
-        <Post image={data.img_src} heading={data.rover.name + " Rover: " + data.camera.full_name} date={data.earth_date} description="" key={data.id}/>
+        <Post planet={"mars"} image={data.img_src} heading={data.rover.name + " Rover: " + data.camera.full_name} date={data.earth_date} description="" key={data.id}/>
       ))}
       <LoadingZone action={nextSol}/>
     </div>

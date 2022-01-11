@@ -8,7 +8,7 @@ function Post({planet, image, heading, date, description}) {
   return (
     <div className="post-wrapper">
       <div className="post">
-        <Image image={image}/>
+        <Image planet={planet} image={image}/>
         <LikeBar />
         <Text heading={heading} date={date} description={description}/>
       </div>

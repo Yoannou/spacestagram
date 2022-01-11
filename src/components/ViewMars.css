@@ -8,11 +8,13 @@
     transition: all 0.8s ease-out;
     width: 100vw;
     position: absolute;
+    z-index: 5;
+    background-color: black;
   }
 
   .mars-bg {
     position: fixed;
-    right: 0px;
+    right: 20px;
     max-width: 70vw;
     height: auto;
     z-index: -5;
@@ -26,17 +28,18 @@
     right: 0px;
     z-index: -1;
   }
+
+  .container-outer-mars {
+    position: relative;
+    width: 100%;
+  }
   
-  .container-mars {
+  .container-inner-mars {
     position: relative;
     z-index: 5;
     max-width: 614px;
     padding: 10px;
     left: 20%;
-  }
-
-  .inactive-mars {
-    transform: translateX(100%);
   }
   
 }

@@ -1,10 +1,11 @@
 import React from 'react'
+import Title from './Title.js'
 import './Home.css'
 
-function Home() {
+function Home({offscreen}) {
   return (
-    <div>
-      
+    <div className={"home-view offscreen-"+offscreen}>
+      <Title main="Spacetagram" sub="Explore space with us."/>
     </div>
   )
 }

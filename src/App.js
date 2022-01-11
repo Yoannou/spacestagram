@@ -6,9 +6,9 @@ import './App.css';
 function App() {
   return (
     <div className="main-wrapper">
-      <Home />
-      <ViewMars active="false" />
-      <ViewEarth active="false" />
+      <Home offscreen="none"/>
+      <ViewEarth offscreen="left" />
+      <ViewMars offscreen="right" />
     </div>
   );
 }
