@@ -15,7 +15,6 @@ function PostsMars({hidden}) {
   let marsData = [];
   let marsDataHolder = [];
   const [marsDisplayedData, setMarsDisplayedData] = useState([]);
-  // let imagesRendered = 6;
   const [imagesRendered, setImagesRendered] = useState(6);
 
   // Whenever the sol increments, we pull data from the new sol:
@@ -56,10 +55,8 @@ function PostsMars({hidden}) {
 
   // Load a subset of Mars data to display on screen using the marsDisplayedData array:
   async function displayMarsData() {
-    console.log(marsData.length);
     marsDataHolder = [];
     for (let i=0; i<imagesRendered; i++) {
-      console.log(marsData[i]);
       marsDataHolder.push(marsData[i]);
     }
     setMarsDisplayedData(marsDataHolder);

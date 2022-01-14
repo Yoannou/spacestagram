@@ -1,4 +1,15 @@
 .loading-zone {
-  width: 100%;
-  height: 150px;
+  text-align: center;
+}
+
+.loading-button {
+  text-align: center;
+  width: 60%;
+  padding: 20px;
+  margin-top: -30px;
+  background-color: silver;
+}
+
+.loading-button:hover {
+  background-color: grey;
 }

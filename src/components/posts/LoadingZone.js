@@ -3,7 +3,11 @@ import './LoadingZone.css'
 
 function LoadingZone({action}) {
   return (
-    <div className="loading-zone" onClick={action}></div>
+    <div className="loading-zone">
+      <button className="loading-button" onClick={action}>
+        <p>Load More</p>
+      </button>
+    </div>
   )
 }
 
