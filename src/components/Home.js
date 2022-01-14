@@ -4,8 +4,10 @@ import './Home.css'
 
 function Home({offscreen}) {
   return (
-    <div className={"home-view offscreen-"+offscreen}>
-      <Title main="Spacetagram" sub="Explore space with us."/>
+    <div id="home" className={"view view-home offscreen-"+offscreen}>
+      <div className="home-container">
+        <Title main="Spacetagram" sub="Explore space with us."/>
+      </div>
     </div>
   )
 }

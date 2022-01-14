@@ -2,43 +2,42 @@
   text-align: center;
 }
 
-@media only screen and (min-width: 1025px) {
-
-  .view-earth {
-    transition: all 0.8s ease-out;
-    width: 100vw;
-    position: absolute;
-    z-index: 5;
-    background-color: black;
-  }
-
-  .earth-bg {
-    position: fixed;
-    left: 0px;
-    max-width: 70vw;
-    height: auto;
-    z-index: -5;
-  }
-
-  .earth-img {
-    transition: all 1s ease;
-    /*position: fixed;
-    max-width: 70vw; */
-    width: 100%;
-    left: 0px;
-    z-index: -1;
-  }
-
-  .container-outer-mars {
-    position: relative;
-    width: 100%;
-  }
-  
-  .container-inner-earth {
-    position: relative;
-    z-index: 5;
-    max-width: 614px;
-    padding: 10px;
-    left: 45%;
-  }
+.view-earth {
+  width: 100vw;
+  position: absolute;
+  z-index: 5;
+  background-color: black;
 }
+
+.earth-bg {
+  position: fixed;
+  left: 0px;
+  max-width: 70vw;
+  height: auto;
+  z-index: -5;
+}
+
+.earth-img {
+  transition: all 1s ease;
+  /*position: fixed;
+  max-width: 70vw; */
+  width: 100%;
+  left: 0px;
+  z-index: -1;
+}
+
+.container-outer-mars {
+  position: relative;
+  width: 100%;
+}
+
+.container-inner-earth {
+  position: relative;
+  z-index: 5;
+  max-width: 614px;
+  padding: 10px;
+  left: 45%;
+}
+
+/*@media only screen and (min-width: 1025px) {*/
+/*}*/

@@ -9,7 +9,7 @@ Loop through the array in the JSX and create a post object for each element.
 Use MAP to generate a post from each object in the result
 */
 
-function PostsEarth() {
+function PostsEarth({hidden}) {
 
   const APIKey = "Q4TKMfEiMEj4MV0YxDAFddfCZEUvi0ofPqf6G9QG";
   const [earthData, setEarthData] = useState([]);
@@ -21,7 +21,7 @@ function PostsEarth() {
   },
   [])
 
-  // 
+  //
   async function getEarthData() {
     // Pass Earth data to our array. Might include this in initial Fetch function below
     const incomingData = await fetchEarthData();
@@ -47,13 +47,13 @@ function PostsEarth() {
   }
 
   //https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/
-  //epic_1b_20190530011359.png?api_key=DEMO_KEY 
+  //epic_1b_20190530011359.png?api_key=DEMO_KEY
 
   return (
-    <div className="posts-container">
-      {earthData.map((data, i) => ( 
-        //https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/epic_1b_20190530011359.png?api_key=DEMO_KEY 
-        <Post planet="earth" image={"https:api.nasa.gov/EPIC/archive/natural/" + (data.identifier).substring(0,4) + "/" 
+    <div className={"posts-container " + hidden}>
+      {earthData.map((data, i) => (
+        //https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/epic_1b_20190530011359.png?api_key=DEMO_KEY
+        <Post planet="earth" image={"https:api.nasa.gov/EPIC/archive/natural/" + (data.identifier).substring(0,4) + "/"
         + (data.identifier).substring(4,6) + "/" + (data.identifier).substring(6,8) + "/png/" + data.image
         + ".png?api_key=" + APIKey} heading={data.caption} date={data.date} description="" key={data.identifier}/>
       ))}
