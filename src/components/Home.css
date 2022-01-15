@@ -1,10 +1,12 @@
 .view-home {
   position: absolute;
   width: 100vw;
+  height: 100vh;
   padding: 200px;
+  box-sizing: border-box;
   text-align: center;
   z-index: -50;
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(/src/img/ss-stars-1.jpg);
+  background-image: linear-gradient(to right, rgba(0,0,0,0.9), rgba(0, 0, 0, 0.5), rgba(0,0,0,0.9)), url(/src/img/ss-stars-1.jpg);
   background-size: contain;
 }
 

@@ -1,0 +1,18 @@
+.mars-input-container {
+  margin-bottom: 50px;
+  padding: 10px;
+}
+
+.sol-select {
+  display: flex;
+  justify-content: space-between;
+  font-family: ethnocentric, sans-serif;
+  font-size: 20px;
+  color: #baa;
+  /*a88*/
+}
+
+.sol-select-slider {
+  width: 60%;
+  text-align: center;
+}
