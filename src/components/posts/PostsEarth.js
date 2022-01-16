@@ -58,7 +58,6 @@ function PostsEarth({hidden}) {
   // Load a subset of Earth data to display on screen using the earthDisplayedData array:
   async function displayEarthData() {
     earthDataHolder = [];
-    console.log("EARTH images rendered: " + imagesRendered);
     for (let i=0; i<imagesRendered; i++) {
       earthDataHolder.push(earthData[i]);
     }
@@ -67,7 +66,6 @@ function PostsEarth({hidden}) {
 
   // Load 6 more images to page:
   async function loadMore() {
-    console.log("LOADING MORE")
     setImagesRendered(imagesRendered => imagesRendered + 6);
     /*console.log("earth data length: " + earthData.length);
     console.log("images rendered :" + imagesRendered);

@@ -18,7 +18,7 @@
 }
 
 
-/* THE ENTIRE RANGE THING */ 
+/* THE ENTIRE RANGE THING */
 input[type=range] {
   -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
   background: #c44; /* Otherwise white in Chrome */
@@ -31,22 +31,19 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 input[type=range]:focus {
-  /*outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
 }
 
 input[type=range]::-ms-track {
   cursor: pointer;
 
   /* Hides the slider so custom styles can be added */
-  background: transparent; 
+  background: transparent;
   border-color: transparent;
   color: transparent;
 }
 
-input[type=button] {
-  margin-top: 20px;
-  font-family: ethnocentric, sans-serif;
-}
+
 
 /* THUMB */
 input[type=range]::-webkit-slider-thumb {
@@ -134,4 +131,31 @@ input[type=range]::-ms-fill-upper {
 }
 input[type=range]:focus::-ms-fill-upper {
   background: #367ebd;
+}
+
+input[type=button] {
+  font-family: ethnocentric, sans-serif;
+  padding: 10px;
+  font-size: 20px;
+}
+
+input[type=button]:hover {
+  background-color: grey;
+}
+
+.rover-select {
+  display: flex;
+  padding: 40px 0px;
+  justify-content: space-between;
+}
+
+.rover-select input {
+  padding: 20px;
+  font-size: 20px;
+}
+
+
+
+#mars-submit {
+  margin-top: 20px;
 }

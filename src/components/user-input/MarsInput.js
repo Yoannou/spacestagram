@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './MarsInput.css'
 
-function MarsInput({sol, onRoverChange, onSolChange}) {
+function MarsInput({sol, maxSol, onRoverChange, onSolChange}) {
 
   // Define max sols for all 3 rovers here
   const MAXSOLS = {
@@ -15,30 +15,37 @@ function MarsInput({sol, onRoverChange, onSolChange}) {
   console.log(MAXSOLS.opportunity);
 
   const [sliderValue, setSliderValue] = useState(sol);
-  const handleSliderChange = (event) => {
-    if (!isNaN(event.target.value)) {
-      setSliderValue(event.target.value);
+
+  const handleRoverChange = (e) => {
+    console.log(e.target.name);
+    onRoverChange(e.target.name);
+  }
+
+  const handleSliderChange = (e) => {
+    if (!isNaN(e.target.value)) {
+      setSliderValue(e.target.value);
       console.log(sliderValue);
     }
   }
+
   const handleSliderSubmit = (e) => {
     e.preventDefault();
     console.log("Generating images from sol: " + sliderValue);
   }
 
-
-
   return (
     <div className="mars-input-container">
       <form className="mars-input-form">
         <div className="rover-select">
-
+          <input type="button" name="curiosity" value="Curiosity" onClick={handleRoverChange}></input>
+          <input type="button" name="opportunity" value="Opportunity" onClick={handleRoverChange}></input>
+          <input type="button" name="spirit" value="Spirit" onClick={handleRoverChange}></input>
         </div>
         <div className="sol-select">
           <input className="sol-select-slider" type="range" id="vol" name="vol" min="1" max={MAXSOLS.curiosity} onChange={handleSliderChange}></input>
           <div className="slider-value">Sol: {sliderValue}</div>
         </div>
-        <input type="button" value="Select" onClick={handleSliderSubmit}></input>
+        <input id="mars-submit" type="button" value="Select" onClick={handleSliderSubmit}></input>
       </form>
     </div>
   )
