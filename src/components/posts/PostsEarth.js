@@ -8,19 +8,33 @@ function PostsEarth({hidden}) {
   const APIKey = "Q4TKMfEiMEj4MV0YxDAFddfCZEUvi0ofPqf6G9QG";
   let earthData = [];
   let earthDataHolder = [];
+  const [dateList, setDateList] = useState([]);
+  const [currentDate, setCurrentDate] = useState("2022-01-15");
   const [earthDataLength, setEarthDataLength] = useState(0);
   const [earthDisplayedData, setEarthDisplayedData] = useState([]);
   const [imagesRendered, setImagesRendered] = useState(6);
 
-  // Initial data pull:
+
+  // Pull in a list of all dates for which images exist on this API:
+  useEffect(()=>{
+    fetch("https://epic.gsfc.nasa.gov/api/natural/all?api_key=" + APIKey)
+    .then((res) => res.json())
+    .then((res) => {
+      setDateList(res);
+    })
+    .catch((err) => {
+      console.log("Error: " + err);
+    })
+  }, 
+  []);
+
+  // Refresh the page to render more images:
   useEffect(() => {
     const controller = new AbortController();
     const signal = controller.signal;
-    fetch("https://api.nasa.gov/EPIC/api/natural?api_key=" + APIKey, { signal: signal })
+    fetch("https://api.nasa.gov/EPIC/api/natural/date/2022-01-15?api_key=" + APIKey, { signal: signal })
     .then((res) => res.json())
     .then((res) => {
-
-      console.log(res);
       getEarthData(res, res.length);
     })
     .catch((err) => {
@@ -34,12 +48,10 @@ function PostsEarth({hidden}) {
       controller.abort();
     }
   },
-  [imagesRendered]);
+  [dateList]);
 
   // Pass retreived Earth data to the earthData array:
   async function getEarthData(incomingData, dataLength) {
-    //const incomingData = await fetchEarthData();
-    console.log("EDL: " + dataLength);
     setEarthDataLength(dataLength);
     if(dataLength < 1){
       console.log("No data");
@@ -66,14 +78,9 @@ function PostsEarth({hidden}) {
 
   // Load 6 more images to page:
   async function loadMore() {
+    console.log(dateList[0].date)
     setImagesRendered(imagesRendered => imagesRendered + 6);
-    /*console.log("earth data length: " + earthData.length);
-    console.log("images rendered :" + imagesRendered);
-    getEarthData();*/
   }
-
-  //https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/
-  //epic_1b_20190530011359.png?api_key=DEMO_KEY
 
   return (
     <div className={"posts-container " + hidden}>

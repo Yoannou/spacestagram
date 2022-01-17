@@ -4,19 +4,31 @@
 }
 
 .post-like-bar {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  justify-items: space-between;
+  width: 95%;
   padding: 20px;
-  font-size: 30px;
-  /*background-color: rgba(255,255,255,0.3);*/
-}
-
-.like-bar-icon {
+  font-size: 40px;
 }
 
 .like-bar-icon:hover {
-  font-size: 40px;
-  color: indianred;
+  position: relative;
+  font-size:50px;
+  cursor: pointer;
+}
+
+.star-icon:hover {
+  right: 5px;
+  bottom: 5px;
+  color: yellow;
+}
+
+.download-icon:hover {
+  left: 5px;
+  bottom: 5px;
+}
+
+.active {
+  color: yellow;
 }

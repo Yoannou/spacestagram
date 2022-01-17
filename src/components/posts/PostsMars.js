@@ -2,23 +2,27 @@ import React, { useEffect, useState } from 'react'
 import MarsInput from '../user-input/MarsInput.js'
 import Post from './Post.js'
 import LoadingZone from './LoadingZone.js'
+import './PostsMars.css'
 
 function PostsMars({hidden}) {
 
   // getMarsData("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1&api_key=Q4TKMfEiMEj4MV0YxDAFddfCZEUvi0ofPqf6G9QG");
   const APIKey = "Q4TKMfEiMEj4MV0YxDAFddfCZEUvi0ofPqf6G9QG";
-  const [sol, setSol] = useState(3356);
-  const [rover, setRover] = useState("curiosity");
+  const [rover, setRover] = useState("spirit");
+  const [sol, setSol] = useState(1);
+  //3356
   let marsData = [];
   let marsDataHolder = [];
   const [marsDataLength, setMarsDataLength] = useState(0);
   const [marsDisplayedData, setMarsDisplayedData] = useState([]);
   const [imagesRendered, setImagesRendered] = useState(6);
+  
 
-  // Whenever the sol incremenets or the imagesRendered increases, we pull fresh data for current sol:
+  // Whenever the rover or sol changes, or we want to render more images, we pull fresh data:
   useEffect(() => {
     const controller = new AbortController();
     const signal = controller.signal;
+    console.log("https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover + "/photos?sol=" + sol + "&api_key=" + APIKey);
     fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover + "/photos?sol=" + sol + "&api_key=" + APIKey, { signal: signal })
     .then((res) => res.json())
     .then((res) => {
@@ -41,7 +45,7 @@ function PostsMars({hidden}) {
   async function getMarsData(incomingData, dataLength) {
     setMarsDataLength(dataLength);
     if(incomingData.photos.length < 1){
-      setSol();
+      setSol(sol);
     }
     else {
       marsData = [...marsData, ...incomingData.photos];
@@ -68,18 +72,29 @@ function PostsMars({hidden}) {
     setImagesRendered(imagesRendered => imagesRendered + 6);
   }
 
+  // Fired on user input when selecting a different rover
   function roverChange(roverName) {
+    console.log("RENDER - roverChange");
     setRover(roverName);
   }
 
+  // Fired on user input when selecting a different sol
+  function solChange(newSol) {
+    console.log("RENDER - solChange");
+    setSol(newSol);
+  }
 
   return (
     <div className={"posts-container " + hidden}>
-      <MarsInput sol={sol} maxSol={3356} onRoverChange={roverChange} onSolChange={0}/>
-      {marsDisplayedData.map((data, i) => (
-        <Post planet={"mars"} image={data.img_src} heading={data.rover.name + " Rover: " + data.camera.full_name} date={data.earth_date} description="" key={data.id}/>
+      <MarsInput sol={sol} onRoverChange={roverChange} onSolChange={solChange}/>
+      <div className="photo-summary">{"Getting images from the " + rover.charAt(0).toUpperCase() + rover.slice(1) + " rover on sol " + sol + ":"}</div>
+      { marsDataLength > 0 && 
+      marsDisplayedData.map((data, i) => (
+        <Post planet={"mars"} image={data.img_src} heading={data.rover.name + " Rover: " + data.camera.full_name} date={data.earth_date} description="" id={data.id} key={data.id}/>
       ))}
-      { (imagesRendered < marsDataLength) && <LoadingZone action={loadMore}/> }
+      { marsDataLength <= 0 && 
+      <div className="no-images">No images exist for selected rover on this sol.</div>}
+      { imagesRendered < marsDataLength && <LoadingZone action={loadMore}/> }
     </div>
   )
 }

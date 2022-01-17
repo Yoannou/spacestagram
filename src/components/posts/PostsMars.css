@@ -1,0 +1,15 @@
+.photo-summary {
+  font-family: nasalization, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.no-images {
+  font-family: nasalization, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+  padding-bottom: 20px;
+}

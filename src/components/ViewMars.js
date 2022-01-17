@@ -14,7 +14,8 @@ function ViewMars({offscreen, hidden}){
       <div className="container-outer-mars">
         <div className="container-inner-mars">
           <Title main="Mars" sub="Explore the red planet through the eyes of one of
-         one of mankind's greatest technological achievements."/>
+         one of mankind's greatest technological achievements: NASA's Martian rovers.
+         Select a rover and a sol (Martian day) from which images were taken."/>
           <PostsMars hidden={hidden}/>
         </div>
       </div>

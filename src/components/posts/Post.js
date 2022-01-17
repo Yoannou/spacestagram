@@ -4,12 +4,15 @@ import LikeBar from './LikeBar.js'
 import Text from './text/Text.js'
 import './Post.css'
 
-function Post({planet, image, heading, date, description}) {
+function Post({planet, image, heading, date, description, id}) {
+  
+  
+  
   return (
     <div className="post-wrapper">
       <div className="post">
         <Image planet={planet} image={image}/>
-        <LikeBar />
+        <LikeBar image={image} id={id} />
         <Text heading={heading} date={date} description={description}/>
       </div>
     </div>
