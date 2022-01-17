@@ -6,8 +6,6 @@ import './App.css';
 
 function App() {
 
-const [sol, setSol] = useState(3349);
-
   const [currentView, setCurrentView] = useState("home");
   const [homeOffscreen, setHomeOffscreen] = useState("none");
   const [earthOffscreen, setEarthOffscreen] = useState("left");
@@ -40,14 +38,18 @@ const [sol, setSol] = useState(3349);
     }
   }
 
-  return (
-    <div className="main-wrapper">
+  /*
+  
       <div className="b1" onClick={() => {toggleView("earth")}}></div>
       <div className="b2" onClick={() => {toggleView("home")}}></div>
       <div className="b3" onClick={() => {toggleView("mars")}}></div>
-      <Home offscreen={homeOffscreen}/>
-      <ViewEarth offscreen={earthOffscreen} hidden={earthHidden} />
-      <ViewMars offscreen={marsOffscreen} hidden={marsHidden} />
+  */
+
+  return (
+    <div className="main-wrapper">
+      <Home offscreen={homeOffscreen} onButtonClick={toggleView} />
+      <ViewEarth offscreen={earthOffscreen} hidden={earthHidden} onButtonClick={toggleView} />
+      <ViewMars offscreen={marsOffscreen} hidden={marsHidden} onButtonClick={toggleView} />
     </div>
   );
 }

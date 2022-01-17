@@ -1,12 +1,22 @@
 import React, { useState, useEffect} from 'react'
+import {AiFillCaretLeft} from 'react-icons/ai'
 import Title from './Title.js'
 import PostsMars from './posts/PostsMars.js'
 import './ViewMars.css'
 import marsBG from '../img/ss-mars-1.jpg'
 
-function ViewMars({offscreen, hidden}){
+function ViewMars({offscreen, hidden, onButtonClick}){
+
+  function handleButtonClick(e) {
+    console.log(e.target.value);
+    onButtonClick(e.target.value);
+  }
+
   return (
     <div className={"view view-mars offscreen-"+offscreen}>
+      <div className="to-home-from-mars">
+        <button value="home" onClick={handleButtonClick}><AiFillCaretLeft/></button>
+      </div>
       <div className="mars-bg">
         <div className="bg-filter"></div>
         <img className="mars-img" src={marsBG}></img>

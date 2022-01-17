@@ -9,6 +9,26 @@
   background-color: black;
 }
 
+.to-home-from-earth {
+  position: absolute;
+  z-index: 50;
+  top: 30px;
+  right: 30px;
+}
+
+.to-home-from-earth button {
+  font-family: ethnocentric, sans-serif;
+  font-size: 60px;
+  text-align: center;
+  padding: 15px 20px 0px 20px;
+  background-color: rgba(50, 50, 50, 0.5);
+  color: white;
+}
+
+.to-home-from-earth button:hover { 
+  background-color: #444;
+}
+
 .earth-bg {
   position: fixed;
   left: 0px;
@@ -19,8 +39,6 @@
 
 .earth-img {
   transition: all 1s ease;
-  /*position: fixed;
-  max-width: 70vw; */
   width: 100%;
   left: 0px;
   z-index: -1;
@@ -32,12 +50,16 @@
 }
 
 .container-inner-earth {
-  position: relative;
-  z-index: 5;
-  max-width: 614px;
+  width: 90%;
   padding: 10px;
-  left: 45%;
 }
 
-/*@media only screen and (min-width: 1025px) {*/
-/*}*/
+@media only screen and (min-width: 1025px) {
+  .container-inner-earth {
+    position: relative;
+    z-index: 5;
+    max-width: 614px;
+    padding: 10px;
+    left: 45%;
+  }
+}

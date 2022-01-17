@@ -1,5 +1,5 @@
 .mars-input-container {
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   padding: 10px;
 }
 
@@ -144,6 +144,7 @@ input[type=button]:hover {
 
 .rover-select {
   display: flex;
+  flex-direction: column;
   padding: 40px 0px;
   justify-content: space-between;
 }
@@ -156,4 +157,10 @@ input[type=button]:hover {
 #mars-submit {
   margin-top: 20px;
   font-size: 16px;
+}
+
+@media only screen and (min-width:1025px) {
+  .rover-select {
+    flex-direction: row;
+  }
 }

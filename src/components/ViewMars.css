@@ -9,6 +9,26 @@
   background-color: black;
 }
 
+.to-home-from-mars {
+  position: absolute;
+  z-index: 50;
+  top: 30px;
+  left: 30px;
+}
+
+.to-home-from-mars button {
+  font-family: ethnocentric, sans-serif;
+  font-size: 60px;
+  text-align: center;
+  padding: 15px 20px 0px 20px;
+  background-color: rgba(50, 50, 50, 0.5);
+  color: white;
+}
+
+.to-home-from-mars button:hover { 
+  background-color: #444;
+}
+
 .mars-bg {
   position: fixed;
   right: 20px;
@@ -19,8 +39,6 @@
 
 .mars-img {
   transition: all 1s ease;
-  /*position: fixed;
-  max-width: 70vw; */
   width: 100%;
   right: 0px;
   z-index: -1;
@@ -32,12 +50,15 @@
 }
 
 .container-inner-mars {
+  width: 90%;
+  padding: 10px;
+}
+
+@media only screen and (min-width:1025px) {
+  .container-inner-mars {
   position: relative;
   z-index: 5;
   max-width: 614px;
-  padding: 10px;
   left: 20%;
+  }
 }
-
-/*@media only screen and (min-width:1025px) {*/
-/*}*/

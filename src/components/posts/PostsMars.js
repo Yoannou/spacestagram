@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { APIKEY } from '../../constants.js'
 import MarsInput from '../user-input/MarsInput.js'
 import Post from './Post.js'
 import LoadingZone from './LoadingZone.js'
@@ -7,7 +8,6 @@ import './PostsMars.css'
 function PostsMars({hidden}) {
 
   // getMarsData("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1&api_key=Q4TKMfEiMEj4MV0YxDAFddfCZEUvi0ofPqf6G9QG");
-  const APIKey = "Q4TKMfEiMEj4MV0YxDAFddfCZEUvi0ofPqf6G9QG";
   const [rover, setRover] = useState("spirit");
   const [sol, setSol] = useState(1);
   //3356
@@ -22,8 +22,8 @@ function PostsMars({hidden}) {
   useEffect(() => {
     const controller = new AbortController();
     const signal = controller.signal;
-    console.log("https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover + "/photos?sol=" + sol + "&api_key=" + APIKey);
-    fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover + "/photos?sol=" + sol + "&api_key=" + APIKey, { signal: signal })
+    console.log("https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover + "/photos?sol=" + sol + "&api_key=" + APIKEY);
+    fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover + "/photos?sol=" + sol + "&api_key=" + APIKEY, { signal: signal })
     .then((res) => res.json())
     .then((res) => {
       getMarsData(res, res.photos.length);

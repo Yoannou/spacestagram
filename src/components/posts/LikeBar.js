@@ -14,7 +14,7 @@ function Likebar({image, id}) {
     <div className="post-like-bar-container">
       <div className="post-like-bar">
         <HiStar className={"like-bar-icon star-icon " + (liked && "active")} onClick={toggleLiked}/>
-        <a href={image} download={"nasa-image-" + id} className="like-bar-icon download-icon">
+        <a href={image} download={"nasa-image-" + id} target="blank" className="like-bar-icon download-icon">
           <HiDownload />
         </a>
       </div>

@@ -2,7 +2,6 @@
   position: absolute;
   width: 100vw;
   height: 100vh;
-  padding: 200px;
   box-sizing: border-box;
   text-align: center;
   z-index: -50;
@@ -10,6 +9,95 @@
   background-size: contain;
 }
 
-#home {
-  /*transition: all 2s ease-out;*/
+.home-title-container {
+  position: relative;
+  top: 30%;
 }
+
+.home-title-container .title {
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  font-size: 40px;
+}
+
+.navigation {
+  position: absolute;
+  bottom: 20%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.to-planet button {
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  font-family: ethnocentric, sans-serif;
+  font-size: 20px;
+}
+
+.to-earth button {
+  margin-left: 6px;
+  background-color: #ddf;
+}
+
+.to-earth button:hover {
+  background-color: #77a;
+}
+
+.to-mars button {
+  margin-right:6px;
+  background-color: #fdd;
+}
+
+.to-mars button:hover {
+  background-color: #a77;
+}
+
+.toggle-music {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+@media only screen and (min-width:1025px) {
+  .home-title-container .title {
+    margin: 0px;
+    text-align: center;
+    font-size: 70px;
+  }
+
+  .to-planet button {
+    padding: 20px 50px;
+    font-size: 30px;
+  }
+
+  .to-earth {
+    padding-left: 60px;
+  }
+  
+  .to-mars {
+    padding-right:60px;
+  }
+}
+
+  @media only screen and (max-height:300px) {
+    .home-title-container {
+      top: 10%;
+    }
+
+    .home-title-container .title {
+      font-size: 50px;
+    }
+
+    .navigation {
+      bottom: 20px;
+    }
+
+    .to-planet button {
+      padding: 10px 20px;
+      font-size: 20px;
+    }
+  }
