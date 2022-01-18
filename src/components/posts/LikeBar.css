@@ -20,6 +20,10 @@
   width: 50px;
 }
 
+.star-icon {
+  color: white;
+}
+
 .post-like-bar-left:hover,
 .post-like-bar-right:hover {
   font-size: 50px;
@@ -27,9 +31,12 @@
 }
 
 .post-like-bar-left:hover .star-icon {
+  /*
+  Cause problems on mobile displays:
   position: relative;
   right: 5px;
   bottom: 5px;
+  */
   color: gold;
 }
 
@@ -41,4 +48,12 @@
 
 .active {
   color: gold;
+}
+
+@media only screen and (min-width:800px) {
+  .post-like-bar-left:hover .star-icon {
+    position: relative;
+    right: 5px;
+    bottom: 5px;
+  }
 }
