@@ -6,7 +6,6 @@ import './App.css';
 
 function App() {
 
-  const [currentView, setCurrentView] = useState("home");
   const [homeOffscreen, setHomeOffscreen] = useState("none");
   const [earthOffscreen, setEarthOffscreen] = useState("left");
   const [marsOffscreen, setMarsOffscreen] = useState("right");
@@ -15,21 +14,21 @@ function App() {
 
   // Code for swapping the sections around:
   function toggleView(newView = "home") {
-    if (newView == "home") {
+    if (newView === "home") {
       setEarthOffscreen("left");
       setHomeOffscreen("none");
       setMarsOffscreen("right");
       setEarthHidden("hidden");
       setMarsHidden("hidden");
     }
-    if (newView == "earth") {
+    if (newView === "earth") {
       setEarthOffscreen("none");
       setHomeOffscreen("right");
       setMarsOffscreen("right");
       setEarthHidden("");
       setMarsHidden("hidden");
     }
-    else if (newView == "mars"){
+    else if (newView === "mars"){
       setEarthOffscreen("left");
       setHomeOffscreen("left");
       setMarsOffscreen("none");

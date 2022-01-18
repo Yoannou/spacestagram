@@ -15,7 +15,6 @@ function EarthInput({onSubmit}) {
   }
 
   function handleSliderSubmit(e){
-    console.log("Changed: " + yearValue + "/" + monthValue);
     onSubmit(yearValue, monthValue);
   }
 

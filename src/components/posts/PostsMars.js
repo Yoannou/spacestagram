@@ -20,7 +20,6 @@ function PostsMars({hidden}) {
   useEffect(() => {
     const controller = new AbortController();
     const signal = controller.signal;
-    console.log("https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover + "/photos?sol=" + sol + "&api_key=" + APIKEY);
     fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/" + rover + "/photos?sol=" + sol + "&api_key=" + APIKEY, { signal: signal })
     .then((res) => res.json())
     .then((res) => {
@@ -72,13 +71,11 @@ function PostsMars({hidden}) {
 
   // Fired on user input when selecting a different rover
   function roverChange(roverName) {
-    console.log("RENDER - roverChange");
     setRover(roverName);
   }
 
   // Fired on user input when selecting a different sol
   function solChange(newSol) {
-    console.log("RENDER - solChange");
     setSol(newSol);
   }
 

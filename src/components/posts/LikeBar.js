@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import {HiStar, HiDownload, HiThumbUp} from 'react-icons/hi'
+import { HiStar, HiDownload } from 'react-icons/hi'
 import './LikeBar.css'
 
 function Likebar({image, id}) {
-
-  console.log(image);
 
   const [liked, setLiked] = useState(false);
   

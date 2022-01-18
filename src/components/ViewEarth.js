@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React from 'react'
 import {AiFillCaretRight} from 'react-icons/ai'
 import Title from './Title.js'
 import PostsEarth from './posts/PostsEarth.js'
@@ -8,7 +8,6 @@ import earthBG from '../img/ss-earth-6-min.jpg'
 function ViewEarth({offscreen, hidden, onButtonClick}){
 
   function handleButtonClick(e) {
-    console.log(e.target.value);
     onButtonClick(e.target.value);
   }
 
@@ -19,7 +18,7 @@ function ViewEarth({offscreen, hidden, onButtonClick}){
       </div>
       <div className="earth-bg">
         <div className="bg-filter"></div>
-        <img className="earth-img" src={earthBG}></img>
+        <img className="earth-img" alt="The Earth in the background" src={earthBG}></img>
       </div>
       <div className="container-outer-earth">
         <div className="container-inner-earth">

@@ -6,8 +6,6 @@ function MarsInput({sol, onRoverChange, onSolChange}) {
   const [sliderValue, setSliderValue] = useState(sol);
 
   function handleRoverChange(e) {
-
-    console.log(e.target.name);
     onRoverChange(e.target.name);
   }
 

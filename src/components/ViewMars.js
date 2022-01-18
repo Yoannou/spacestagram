@@ -1,4 +1,4 @@
-import React, { useState, useEffect} from 'react'
+import React from 'react'
 import {AiFillCaretLeft} from 'react-icons/ai'
 import Title from './Title.js'
 import PostsMars from './posts/PostsMars.js'
@@ -8,7 +8,6 @@ import marsBG from '../img/ss-mars-1-min.jpg'
 function ViewMars({offscreen, hidden, onButtonClick}){
 
   function handleButtonClick(e) {
-    console.log(e.target.value);
     onButtonClick(e.target.value);
   }
 
@@ -19,7 +18,7 @@ function ViewMars({offscreen, hidden, onButtonClick}){
       </div>
       <div className="mars-bg">
         <div className="bg-filter"></div>
-        <img className="mars-img" src={marsBG}></img>
+        <img className="mars-img" alt="Mars in the background" src={marsBG}></img>
       </div>
       <div className="container-outer-mars">
         <div className="container-inner-mars">

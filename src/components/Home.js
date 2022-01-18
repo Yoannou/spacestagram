@@ -1,13 +1,10 @@
 import React from 'react'
-import ReactAudioPlayer from 'react-audio-player';
-import music from '../audio/spacestagram.ogg'
 import Title from './Title.js'
 import './Home.css'
 
 function Home({offscreen, onButtonClick}) {
 
   function handleButtonClick(e) {
-    console.log(e.target.value);
     onButtonClick(e.target.value);
   }
 
