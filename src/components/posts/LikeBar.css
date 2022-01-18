@@ -12,23 +12,33 @@
   font-size: 40px;
 }
 
-.like-bar-icon:hover {
-  position: relative;
-  font-size:50px;
+.post-like-bar-left {
+  width: 50px;
+}
+
+.post-like-bar-right {
+  width: 50px;
+}
+
+.post-like-bar-left:hover,
+.post-like-bar-right:hover {
+  font-size: 50px;
   cursor: pointer;
 }
 
-.star-icon:hover {
+.post-like-bar-left:hover .star-icon {
+  position: relative;
   right: 5px;
   bottom: 5px;
-  color: yellow;
+  color: gold;
 }
 
-.download-icon:hover {
-  left: 5px;
+.post-like-bar-right:hover .download-icon {
+  position: relative;
+  right: 5px;
   bottom: 5px;
 }
 
 .active {
-  color: yellow;
+  color: gold;
 }

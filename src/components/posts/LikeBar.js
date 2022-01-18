@@ -13,10 +13,14 @@ function Likebar({image, id}) {
   return (
     <div className="post-like-bar-container">
       <div className="post-like-bar">
-        <HiStar className={"like-bar-icon star-icon " + (liked && "active")} onClick={toggleLiked}/>
-        <a href={image} download={"nasa-image-" + id} target="blank" className="like-bar-icon download-icon">
-          <HiDownload />
-        </a>
+        <div className="post-like-bar-left" onClick={toggleLiked}>
+          <HiStar className={"like-bar-icon star-icon " + (liked && "active")} />
+        </div>
+        <div className="post-like-bar-right">
+          <a href={image} download={"nasa-image-" + id} target="blank" className="like-bar-icon download-icon">
+            <HiDownload />
+          </a>
+        </div>
       </div>
     </div>
   )
