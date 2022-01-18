@@ -13,7 +13,7 @@ function ViewEarth({offscreen, hidden, onButtonClick}){
   }
 
   return (
-    <div className={"view view-earth offscreen-" + offscreen}>
+    <section className={"view view-earth offscreen-" + offscreen}>
       <div className="to-home-from-earth">
         <button value="home" onClick={handleButtonClick}><AiFillCaretRight/></button>
       </div>
@@ -29,7 +29,7 @@ function ViewEarth({offscreen, hidden, onButtonClick}){
           <PostsEarth hidden={hidden} />
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

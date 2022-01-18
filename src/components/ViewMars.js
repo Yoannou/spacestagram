@@ -13,7 +13,7 @@ function ViewMars({offscreen, hidden, onButtonClick}){
   }
 
   return (
-    <div className={"view view-mars offscreen-"+offscreen}>
+    <section className={"view view-mars offscreen-"+offscreen}>
       <div className="to-home-from-mars">
         <button value="home" onClick={handleButtonClick}><AiFillCaretLeft/></button>
       </div>
@@ -25,11 +25,11 @@ function ViewMars({offscreen, hidden, onButtonClick}){
         <div className="container-inner-mars">
           <Title main="Mars" sub="Explore the red planet through the eyes of one of
          one of mankind's greatest technological achievements: NASA's Martian rovers.
-         Select a rover and a sol (Martian day) from which images were taken."/>
+         Select a rover and a sol (Martian day) from which to pull images."/>
           <PostsMars hidden={hidden}/>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

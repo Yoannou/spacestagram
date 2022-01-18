@@ -1,4 +1,6 @@
 import React from 'react'
+import ReactAudioPlayer from 'react-audio-player';
+import music from '../audio/spacestagram.ogg'
 import Title from './Title.js'
 import './Home.css'
 
@@ -10,24 +12,19 @@ function Home({offscreen, onButtonClick}) {
   }
 
   return (
-    <div id="home" className={"view view-home offscreen-"+offscreen}>
+    <section id="home" className={"view view-home offscreen-"+offscreen}>
       <div className="home-title-container">
         <Title main="Spacetagram" sub="Creep your solar system."/>
       </div>
       <div className="navigation">
           <div className="to-planet to-earth">
             <button value="earth" onClick={handleButtonClick}>View Earth</button>
-            <p>Earth is a beautiful place.</p>
           </div>
           <div className="to-planet to-mars">
             <button value="mars" onClick={handleButtonClick}>View Mars</button>
-            <p>Mars is really cool.</p>
           </div>
         </div>
-        <div className="toggle-music">
-            <p>Music: off</p>
-        </div>
-    </div>
+    </section>
   )
 }
 

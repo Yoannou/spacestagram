@@ -90,18 +90,3 @@ function PostsEarth({hidden}) {
 }
 
 export default PostsEarth
-
-    /*
-    setEarthDataLength(dataLength);
-    if(dataLength < 1){
-      console.log("No data");
-    }
-    else {
-      earthData = [...earthData, ...incomingData];
-      if(imagesRendered > dataLength){
-        setImagesRendered(dataLength);
-      }
-      else {
-      }
-    }
-    */
