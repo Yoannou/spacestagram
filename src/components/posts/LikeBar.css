@@ -26,24 +26,7 @@
 
 .post-like-bar-left:hover,
 .post-like-bar-right:hover {
-  font-size: 50px;
   cursor: pointer;
-}
-
-.post-like-bar-left:hover .star-icon {
-  /*
-  Cause problems on mobile displays:
-  position: relative;
-  right: 5px;
-  bottom: 5px;
-  */
-  color: gold;
-}
-
-.post-like-bar-right:hover .download-icon {
-  position: relative;
-  right: 5px;
-  bottom: 5px;
 }
 
 .active {
@@ -51,9 +34,22 @@
 }
 
 @media only screen and (min-width:800px) {
+
   .post-like-bar-left:hover .star-icon {
     position: relative;
     right: 5px;
     bottom: 5px;
+    color: gold;
   }
+
+  .post-like-bar-right:hover .download-icon {
+    position: relative;
+    right: 5px;
+    bottom: 5px;
+  }
+
+  .post-like-bar-left:hover,
+  .post-like-bar-right:hover {
+  font-size: 50px;
+}
 }

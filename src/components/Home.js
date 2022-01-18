@@ -15,10 +15,10 @@ function Home({offscreen, onButtonClick}) {
       </div>
       <div className="navigation">
           <div className="to-planet to-earth">
-            <button value="earth" onClick={handleButtonClick}>View Earth</button>
+            <button className="btn" value="earth" onClick={handleButtonClick}>View Earth</button>
           </div>
           <div className="to-planet to-mars">
-            <button value="mars" onClick={handleButtonClick}>View Mars</button>
+            <button className="btn" value="mars" onClick={handleButtonClick}>View Mars</button>
           </div>
         </div>
     </section>

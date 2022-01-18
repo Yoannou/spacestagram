@@ -35,7 +35,7 @@ function EarthInput({onSubmit}) {
           <div className="slider-value earth-slider-value">{monthValue}</div>
         </div>
       </div>
-      <input id="earth-submit" type="button" value="Search" onClick={handleSliderSubmit}></input>
+      <input id="earth-submit" className="btn" type="button" value="Search" onClick={handleSliderSubmit}></input>
     </form>
   </div>
   )

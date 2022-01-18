@@ -42,6 +42,7 @@ input[type=button]:hover {
 }
 
 #mars-submit {
+  color: black;
   margin-top: 20px;
   font-size: 16px;
 }

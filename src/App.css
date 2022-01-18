@@ -32,6 +32,12 @@ p {
   z-index: 50;
 }
 
+button,
+.btn
+ {
+  color: black;
+}
+
 /* CLASSES */
 .main-wrapper {
   overflow-x: hidden;
@@ -61,30 +67,7 @@ SECTIONS
   display: none;
 }
 
-.b1, .b2, .b3 {
-  position: fixed;
-  width: 200px;
-  height: 100px;
-  z-index: 50;
-  margin-top: 50px;
-  background-color: indianred;
-}
 
-.b1:hover, .b2:hover, .b3:hover {
-  background-color: red;
-}
-
-.b1 {
-  left: 20%;
-}
-
-.b2 {
-  left: 40%;
-}
-
-.b3 {
-  left: 60%;
-}
 
 .offscreen-right {
   transform: translateX(150%);
