@@ -4,6 +4,8 @@ import './LikeBar.css'
 
 function Likebar({image, id}) {
 
+  console.log(image);
+
   const [liked, setLiked] = useState(false);
   
   function toggleLiked() {

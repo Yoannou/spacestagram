@@ -77,8 +77,7 @@ function PostsEarth({hidden}) {
     <div className={"posts-container " + hidden}>
       <EarthInput onSubmit={searchDate}/>
       {earthDisplayedData.map((data, i) => (
-        //https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/epic_1b_20190530011359.png?api_key=DEMO_KEY
-        <Post planet="earth" image={"https:api.nasa.gov/EPIC/archive/natural/" + (data.identifier).substring(0,4) + "/"
+        <Post planet="earth" image={"https://api.nasa.gov/EPIC/archive/natural/" + (data.identifier).substring(0,4) + "/"
         + (data.identifier).substring(4,6) + "/" + (data.identifier).substring(6,8) + "/png/" + data.image
         + ".png?api_key=" + APIKEY} heading={""} date={data.date} description="" key={data.identifier}/>
       ))}

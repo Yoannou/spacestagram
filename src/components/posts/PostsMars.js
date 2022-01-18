@@ -7,10 +7,8 @@ import './PostsMars.css'
 
 function PostsMars({hidden}) {
 
-  // getMarsData("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=1&api_key=Q4TKMfEiMEj4MV0YxDAFddfCZEUvi0ofPqf6G9QG");
   const [rover, setRover] = useState("spirit");
   const [sol, setSol] = useState(1);
-  //3356
   let marsData = [];
   let marsDataHolder = [];
   const [marsDataLength, setMarsDataLength] = useState(0);
