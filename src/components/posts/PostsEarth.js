@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { APIKEY, EPICDATES } from '../../constants.js'
 import * as dates from '../../epic-all-dates.json';
+import EarthInput from '../user-input/EarthInput.js'
 import Post from './Post.js'
 import LoadingZone from './LoadingZone.js'
 
@@ -8,29 +9,15 @@ function PostsEarth({hidden}) {
 
   let earthData = [];
   let earthDataHolder = [];
-  const [currentDate, setCurrentDate] = useState(10);
+  const [currentDate, setCurrentDate] = useState(EPICDATES.length-3);
   const [earthDataLength, setEarthDataLength] = useState(0);
   const [earthDisplayedData, setEarthDisplayedData] = useState([]);
   const [imagesRendered, setImagesRendered] = useState(6);
 
-  function pullDates() {
-    fetch("../../epic-all-dates.json")
-    .then ((res) => res.json())
-    .then ((res) => {
-      console.log(res);
-    })
-    .catch((err) => {
-      console.log(err);
-    })
-  }
 
-  function parseJ() {
-    console.log(JSON.parse(dates));
-  }
-
-  // Refresh the page to render more images:
+  // Pull data for the current requested date whenever it changes:
   useEffect(() => {
-    console.log(dates);
+    console.log(currentDate);
     const controller = new AbortController();
     const signal = controller.signal;
     fetch("https://api.nasa.gov/EPIC/api/natural/date/" + EPICDATES[currentDate].date + "?api_key=" + APIKEY, { signal: signal })
@@ -51,8 +38,60 @@ function PostsEarth({hidden}) {
   },
   [currentDate]);
 
-  // Pass retreived Earth data to the earthData array:
-  async function getEarthData(incomingData, dataLength) {
+  // Display retreived earth data on screen for the selected date:
+  function getEarthData(incomingData, dataLength) {
+    setEarthDisplayedData(incomingData);
+  }
+
+  // This algorithm for searching a date definitely needs to be cleaned up, but it works:
+  function searchDate(year, month){
+    if (parseInt(month) < 10) {
+      month = "0" + month;
+    }
+    const result = EPICDATES.filter((data)=> {
+      return data.date.slice(0, 7) == (year + "-" + month);
+    })
+    console.log(result);
+    if(result.length > 0) {
+      const comparison = (result[result.length-1].date);
+      for (let i = 0; i < EPICDATES.length; i++) {
+        if (EPICDATES[i].date == comparison) {
+          setCurrentDate(i);
+        }
+      }
+    }
+    else {
+      console.log("NO DATES");
+    }
+  }
+
+  // Load in images from the next available earth date:
+  async function loadMore() {
+    window.scroll(0, 0);
+    if (currentDate > 0) {
+      setCurrentDate(currentDate - 1);
+    }
+  }
+
+  return (
+    <div className={"posts-container " + hidden}>
+      <EarthInput onSubmit={searchDate}/>
+      {earthDisplayedData.map((data, i) => (
+        //https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/epic_1b_20190530011359.png?api_key=DEMO_KEY
+        <Post planet="earth" image={"https:api.nasa.gov/EPIC/archive/natural/" + (data.identifier).substring(0,4) + "/"
+        + (data.identifier).substring(4,6) + "/" + (data.identifier).substring(6,8) + "/png/" + data.image
+        + ".png?api_key=" + APIKEY} heading={""} date={data.date} description="" key={data.identifier}/>
+      ))}
+      { currentDate == "nil" && 
+      <div className="no-images">No images exist for this date.</div>}
+      <LoadingZone action={loadMore} />
+    </div>
+  )
+}
+
+export default PostsEarth
+
+    /*
     setEarthDataLength(dataLength);
     if(dataLength < 1){
       console.log("No data");
@@ -63,37 +102,6 @@ function PostsEarth({hidden}) {
         setImagesRendered(dataLength);
       }
       else {
-        displayEarthData();
       }
     }
-  }
-
-  // Load a subset of Earth data to display on screen using the earthDisplayedData array:
-  async function displayEarthData() {
-    earthDataHolder = [];
-    for (let i=0; i<earthData.length; i++) {
-      earthDataHolder.push(earthData[i]);
-    }
-    setEarthDisplayedData(earthDataHolder);
-  }
-
-  // Load in images from the next available earth date:
-  async function loadMore() {
-    setCurrentDate(currentDate + 1);
-    console.log(EPICDATES[currentDate].date)
-  }
-
-  return (
-    <div className={"posts-container " + hidden}>
-      {earthDisplayedData.map((data, i) => (
-        //https://api.nasa.gov/EPIC/archive/natural/2019/05/30/png/epic_1b_20190530011359.png?api_key=DEMO_KEY
-        <Post planet="earth" image={"https:api.nasa.gov/EPIC/archive/natural/" + (data.identifier).substring(0,4) + "/"
-        + (data.identifier).substring(4,6) + "/" + (data.identifier).substring(6,8) + "/png/" + data.image
-        + ".png?api_key=" + APIKEY} heading={data.caption} date={data.date} description="" key={data.identifier}/>
-      ))}
-      { (imagesRendered < earthDataLength) && <LoadingZone action={loadMore} /> }
-    </div>
-  )
-}
-
-export default PostsEarth
+    */

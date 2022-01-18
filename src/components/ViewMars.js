@@ -3,7 +3,7 @@ import {AiFillCaretLeft} from 'react-icons/ai'
 import Title from './Title.js'
 import PostsMars from './posts/PostsMars.js'
 import './ViewMars.css'
-import marsBG from '../img/ss-mars-1.jpg'
+import marsBG from '../img/ss-mars-1-min.jpg'
 
 function ViewMars({offscreen, hidden, onButtonClick}){
 

@@ -1,0 +1,25 @@
+.earth-input-container {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.month-select {
+  margin-bottom: 40px;
+}
+
+.year-select-slider,
+.month-select-slider {
+  width: 90%;
+  text-align: center;
+}
+
+.earth-slider-value {
+  color: #aac;
+}
+
+.slider-wrapper {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  font-family: ethnocentric, sans-serif;
+  font-size: 20px;
+}

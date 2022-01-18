@@ -12,7 +12,7 @@ function Home({offscreen, onButtonClick}) {
   return (
     <div id="home" className={"view view-home offscreen-"+offscreen}>
       <div className="home-title-container">
-        <Title main="Spacetagram" sub="Explore space with us."/>
+        <Title main="Spacetagram" sub="Creep your solar system."/>
       </div>
       <div className="navigation">
           <div className="to-planet to-earth">

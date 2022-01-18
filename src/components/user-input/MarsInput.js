@@ -31,8 +31,8 @@ function MarsInput({sol, onRoverChange, onSolChange}) {
           <input type="button" name="curiosity" value="Curiosity" onClick={handleRoverChange}></input>
         </div>
         <div className="sol-select">
-          <input className="sol-select-slider" type="range" id="vol" name="vol" min="1" max="5111" onChange={handleSliderChange}></input>
-          <div className="slider-value">Sol: {sliderValue}</div>
+          <input className="sol-select-slider" type="range" id="sol-slider" name="sol" min="1" max="5111" onChange={handleSliderChange}></input>
+          <div className="mars-slider-value">Sol: {sliderValue}</div>
         </div>
         <input id="mars-submit" type="button" value="Select sol" onClick={handleSliderSubmit}></input>
       </form>
