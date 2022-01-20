@@ -24,7 +24,7 @@ function EarthInput({onSubmit}) {
       <div className="year-select">
         <h3>Year:</h3>
         <div className="slider-wrapper">
-          <input className="year-select-slider" type="range" id="yearVal" name="year" min="2015" max="2022" onChange={handleSliderChangeYear}></input>
+          <input className="year-select-slider" type="range" id="yearVal" name="year" defaultValue="1" min="2015" max="2022" onChange={handleSliderChangeYear}></input>
           <div className="slider-value earth-slider-value">{yearValue}</div>
         </div>
       </div>
