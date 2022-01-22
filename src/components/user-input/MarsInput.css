@@ -43,7 +43,7 @@ input[type=button]:hover {
 
 .rover-btn {
   margin-bottom: 10px;
-  height: 100px;
+  min-height: 75px;
 }
 
 #mars-submit {
@@ -55,8 +55,7 @@ input[type=button]:hover {
 @media only screen and (min-width:1025px) {
   .rover-select {
     flex-direction: row;
-     padding: 40px 0px;
-
+    padding: 40px 0px;
   }
 
   .rover-btn {
